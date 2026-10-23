@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyería Delux | Inicio</title>
+
+    <!-- BOOTSTRAP 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- TIPOGRAFÍAS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #172A46;
+            --azul-claro: #29476C;
+            --dorado: #C8A968;
+            --crema: #F7F3EA;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema);
+            color: var(--azul);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* BARRA SUPERIOR */
+        .barra-superior {
+            background-color: var(--azul);
+            color: var(--dorado);
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        /* NAVEGACIÓN */
+        .navbar {
+            background-color: white;
+            border-bottom: 4px solid var(--dorado);
+            padding: 12px 0;
+        }
+
+        .logo {
+            width: 160px;
+            max-height: 85px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: var(--azul);
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dorado) !important;
+        }
+
+        .carrito-enlace {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul);
+            text-decoration: none;
+            font-size: 25px;
+            margin-left: 28px;
+            padding: 8px;
+        }
+
+        .carrito-enlace:hover {
+            color: var(--dorado);
+        }
+
+        .carrito-contador {
+            position: absolute;
+            top: 0;
+            right: -3px;
+            background-color: var(--dorado);
+            color: var(--azul);
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            padding: 2px 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CARRUSEL */
+        .seccion-banners {
+            background-color: var(--azul);
+            border-bottom: 5px solid var(--dorado);
+        }
+
+        .carousel-inner {
+            background-color: var(--azul);
+        }
+
+        .banner {
+            width: 100%;
+            aspect-ratio: 1600 / 533;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 8%;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--dorado);
+            height: 4px;
+        }
+
+        /* BIENVENIDA */
+        .bienvenida {
+            padding: 85px 20px;
+            text-align: center;
+        }
+
+        .subtitulo {
+            color: var(--dorado);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .bienvenida h1 {
+            font-size: 43px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .linea-dorada {
+            width: 85px;
+            height: 3px;
+            background-color: var(--dorado);
+            margin: 25px auto;
+        }
+
+        .bienvenida .frase {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .bienvenida .descripcion {
+            max-width: 780px;
+            margin: 20px auto 30px;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* BOTONES */
+        .btn-delux {
+            display: inline-block;
+            background-color: var(--azul);
+            color: white;
+            border: 2px solid var(--dorado);
+            padding: 13px 35px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-delux:hover {
+            background-color: var(--dorado);
+            color: var(--azul);
+        }
+
+        /* FRANJA AZUL */
+        .franja-azul {
+            background-color: var(--azul);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+            border-top: 3px solid var(--dorado);
+            border-bottom: 3px solid var(--dorado);
+        }
+
+        .franja-azul h2 {
+            color: var(--dorado);
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .franja-azul p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* PRODUCTOS DESTACADOS */
+        .productos {
+            background-color: white;
+            padding: 85px 0;
+        }
+
+        .titulo-seccion {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .producto-card {
+            display: block;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            border-bottom: 4px solid var(--dorado);
+            border-radius: 5px;
+            overflow: hidden;
+            height: 100%;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--azul);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(23,42,70,0.15);
+            color: var(--azul);
+        }
+
+        .producto-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .producto-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .producto-card .card-body {
+            padding: 22px 15px;
+            text-align: center;
+        }
+
+        .producto-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .producto-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* CATEGORÍAS */
+        .categorias {
+            padding: 85px 0;
+        }
+
+        .categoria {
+            display: block;
+            background-color: var(--azul);
+            color: white;
+            border-top: 4px solid var(--dorado);
+            padding: 35px 15px;
+            text-align: center;
+            height: 100%;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .categoria:hover {
+            background-color: var(--azul-claro);
+            transform: translateY(-5px);
+        }
+
+        .categoria h3 {
+            font-size: 20px;
+            color: var(--dorado);
+            margin-bottom: 0;
+        }
+
+        /* PIE DE PÁGINA */
+        .footer-delux {
+            background-color: var(--azul);
+            color: white;
+            text-align: center;
+            border-top: 5px solid var(--dorado);
+            padding: 50px 20px 30px;
+        }
+
+        .footer-delux h2 {
+            color: var(--dorado);
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+
+        .footer-delux p {
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .nav-link {
+                margin-left: 0;
+                padding: 12px 0;
+            }
+
+            .carrito-enlace {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .bienvenida h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                width: 125px;
+            }
+
+            .barra-superior {
+                font-size: 10px;
+            }
+
+            .bienvenida {
+                padding: 55px 15px;
+            }
+
+            .bienvenida h1 {
+                font-size: 28px;
+            }
+
+            .bienvenida .frase {
+                font-size: 17px;
+            }
+
+            .titulo-seccion {
+                font-size: 27px;
+            }
+
+            .producto-card img {
+                height: 170px;
+            }
+
+            .producto-card h3 {
+                font-size: 17px;
+            }
+
+            .productos,
+            .categorias {
+                padding: 55px 0;
+            }
+
+            .franja-azul h2 {
+                font-size: 24px;
+            }
+
+            .categoria h3 {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="barra-superior">
+        JOYERÍA DELUX · ELEGANCIA Y ESTILO
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html">
+                    <img
+                        src="img/logo-delux.png"
+                        alt="Logotipo de Joyería Delux"
+                        class="logo"
+                    >
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                               aria-current="page"
+                               href="index.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">
+                                Productos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="carrito-enlace"
+                               href="carrito.html"
+                               aria-label="Ver carrito de compras">
+
+                                <i class="bi bi-cart3" aria-hidden="true"></i>
+
+                                <span class="carrito-contador"
+                                      id="contadorCarrito">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- CARRUSEL DE BANNERS -->
+        <section class="seccion-banners">
+
+            <div
+                id="carruselDelux"
+                class="carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="5000"
+                data-bs-pause="false"
+                data-bs-wrap="true"
+            >
+
+                <div class="carousel-indicators">
+                    <button type="button"
+                            data-bs-target="#carruselDelux"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Banner 1">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#carruselDelux"
+                            data-bs-slide-to="1"
+                            aria-label="Banner 2">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#carruselDelux"
+                            data-bs-slide-to="2"
+                            aria-label="Banner 3">
+                    </button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="img/banner1.jpg"
+                             class="d-block w-100 banner"
+                             alt="Primer banner de Joyería Delux">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/banner2.jpg"
+                             class="d-block w-100 banner"
+                             alt="Segundo banner de Joyería Delux">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img/banner3.jpg"
+                             class="d-block w-100 banner"
+                             alt="Tercer banner de Joyería Delux">
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carruselDelux"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carruselDelux"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon"
+                          aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- BIENVENIDA -->
+        <section class="bienvenida container">
+
+            <p class="subtitulo">
+                Bienvenido a Delux
+            </p>
+
+            <h1>
+                Joyería que representa tu esencia
+            </h1>
+
+            <div class="linea-dorada"></div>
+
+            <p class="frase">
+                Acompañar al mundo con elegancia.
+            </p>
+
+            <p class="descripcion">
+                Descubre accesorios que complementan tu estilo
+                y expresan tu personalidad.
+
+                En Joyería Delux encontrarás una selección
+                de collares, pulseras, esclavas, aretes y anillos
+                para diferentes ocasiones.
+            </p>
+
+            <a href="productos.html" class="btn-delux">
+                Ver productos
+            </a>
+
+        </section>
+
+        <!-- FRANJA AZUL -->
+        <section class="franja-azul">
+
+            <div class="container">
+
+                <h2>
+                    Descubre el estilo Delux
+                </h2>
+
+                <p>
+                    Accesorios para acompañarte en cada momento.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <!-- SOLO APARECEN LOS DOS COLLARES -->
+        <section class="productos">
+
+            <div class="container">
+
+                <div class="text-center mb-5">
+
+                    <p class="subtitulo">
+                        Nuestra selección
+                    </p>
+
+                    <h2 class="titulo-seccion">
+                        Productos destacados
+                    </h2>
+
+                    <div class="linea-dorada"></div>
+
+                    <p class="text-secondary">
+                        Explora algunos diseños de nuestra colección.
+                    </p>
+
+                </div>
+
+                <div class="row g-4 justify-content-center">
+
+                    <!-- PRODUCTO 1: COLLAR DORADO -->
+                    <div class="col-6 col-lg-4">
+
+                        <a class="producto-card"
+                           href="especificaciones.html?id=1">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80"
+                                alt="Collar dorado"
+                                loading="lazy"
+                            >
+
+                            <div class="card-body">
+                                <h3>Collar dorado</h3>
+                                <p>Modelo de muestra</p>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                    <!-- PRODUCTO 2: COLLAR ELEGANTE -->
+                    <div class="col-6 col-lg-4">
+
+                        <a class="producto-card"
+                           href="especificaciones.html?id=2">
+
+                            <img
+                                src="img/collar elegante.jpg"
+                                alt="Collar elegante"
+                                loading="lazy"
+                            >
+
+                            <div class="card-body">
+                                <h3>Collar elegante</h3>
+                                <p>Modelo de muestra</p>
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- BOTÓN VER TODOS LOS PRODUCTOS -->
+                <div class="text-center mt-5">
+
+                    <a href="productos.html" class="btn-delux">
+                        Explorar todos los productos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CATEGORÍAS -->
+        <section class="categorias">
+
+            <div class="container">
+
+                <div class="text-center mb-5">
+
+                    <p class="subtitulo">
+                        Explora Delux
+                    </p>
+
+                    <h2 class="titulo-seccion">
+                        Accesorios para cada estilo
+                    </h2>
+
+                    <div class="linea-dorada"></div>
+
+                    <p>
+                        Conoce nuestras categorías de joyería.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-6 col-md-3">
+                        <a href="productos.html?categoria=collares"
+                           class="categoria">
+                            <h3>Collares</h3>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <a href="productos.html?categoria=pulseras"
+                           class="categoria">
+                            <h3>Pulseras</h3>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <a href="productos.html?categoria=esclavas"
+                           class="categoria">
+                            <h3>Esclavas</h3>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <a href="productos.html?categoria=aretes-anillos"
+                           class="categoria">
+                            <h3>Aretes y anillos</h3>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer-delux">
+
+        <div class="container">
+
+            <h2>DELUX</h2>
+
+            <div class="linea-dorada"></div>
+
+            <p>
+                Acompañar al mundo con elegancia.
+            </p>
+
+            <p class="small mb-0">
+                Joyería Delux | Sitio web académico
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT DE BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CONTADOR DEL CARRITO -->
+    <script>
+
+        function actualizarContadorCarrito() {
+
+            let carrito = [];
+
+            try {
+                const datos = JSON.parse(
+                    localStorage.getItem("carritoDelux")
+                );
+
+                carrito = Array.isArray(datos) ? datos : [];
+
+            } catch (error) {
+                carrito = [];
+            }
+
+            const cantidadTotal = carrito.reduce(
+                function(total, producto) {
+                    return total + Number(producto.cantidad || 0);
+                },
+                0
+            );
+
+            document.getElementById(
+                "contadorCarrito"
+            ).textContent = cantidadTotal;
+
+        }
+
+        actualizarContadorCarrito();
+
+        window.addEventListener(
+            "pageshow",
+            actualizarContadorCarrito
+        );
+
+    </script>
+
+</body>
+</html>
+
+

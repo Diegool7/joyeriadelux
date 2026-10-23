@@ -1,0 +1,1083 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Especificaciones | Joyería Delux</title>
+
+    <!-- BOOTSTRAP 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- ICONOS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- TIPOGRAFÍAS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* COLORES DELUX */
+
+        :root {
+            --azul: #172A46;
+            --azul-claro: #29476C;
+            --dorado: #C8A968;
+            --crema: #F7F3EA;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema);
+            color: var(--azul);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* BARRA SUPERIOR */
+
+        .barra-superior {
+            background-color: var(--azul);
+            color: var(--dorado);
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        /* NAVEGACIÓN */
+
+        .navbar {
+            background-color: white;
+            border-bottom: 4px solid var(--dorado);
+            padding: 12px 0;
+        }
+
+        .logo {
+            width: 160px;
+            max-height: 85px;
+            object-fit: contain;
+        }
+
+        .nav-link {
+            color: var(--azul);
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dorado) !important;
+        }
+
+        .carrito-enlace {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul);
+            text-decoration: none;
+            font-size: 25px;
+            margin-left: 28px;
+            padding: 8px;
+        }
+
+        .carrito-enlace:hover {
+            color: var(--dorado);
+        }
+
+        .carrito-contador {
+            position: absolute;
+            top: 0;
+            right: -3px;
+            background-color: var(--dorado);
+            color: var(--azul);
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            padding: 2px 4px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ENCABEZADO */
+
+        .encabezado {
+            background: linear-gradient(
+                135deg,
+                var(--azul),
+                var(--azul-claro)
+            );
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dorado);
+        }
+
+        .encabezado h1 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .linea-dorada {
+            width: 85px;
+            height: 3px;
+            background-color: var(--dorado);
+            margin: 22px auto;
+        }
+
+        /* ESPECIFICACIONES */
+
+        .seccion-especificaciones {
+            padding: 75px 0;
+        }
+
+        .panel-producto {
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            border-top: 4px solid var(--dorado);
+            border-radius: 8px;
+            padding: 35px;
+        }
+
+        .imagen-producto {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #eee;
+        }
+
+        .categoria {
+            color: var(--dorado);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nombre-producto {
+            font-size: 37px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .precio {
+            color: var(--azul);
+            font-size: 29px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .descripcion {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* TABLA DE CARACTERÍSTICAS */
+
+        .titulo-detalles {
+            font-size: 24px;
+            margin: 30px 0 20px;
+        }
+
+        .tabla-detalles {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .tabla-detalles tr {
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .tabla-detalles th,
+        .tabla-detalles td {
+            padding: 13px 8px;
+            text-align: left;
+        }
+
+        .tabla-detalles th {
+            width: 40%;
+            color: var(--azul);
+        }
+
+        .tabla-detalles td {
+            color: #666;
+        }
+
+        /* CANTIDAD */
+
+        .selector-cantidad {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .selector-cantidad label {
+            font-weight: 600;
+        }
+
+        .control-cantidad {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .control-cantidad button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: var(--crema);
+            color: var(--azul);
+            font-weight: 700;
+        }
+
+        .control-cantidad button:hover {
+            background-color: var(--dorado);
+        }
+
+        .control-cantidad input {
+            width: 55px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-weight: 600;
+            color: var(--azul);
+            background-color: white;
+        }
+
+        /* BOTONES */
+
+        .btn-delux {
+            display: inline-block;
+            background-color: var(--azul);
+            color: white;
+            border: 2px solid var(--dorado);
+            padding: 14px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-delux:hover {
+            background-color: var(--dorado);
+            color: var(--azul);
+        }
+
+        .botones-compra {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .mensaje-agregado {
+            display: none;
+            color: #237a43;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* VOLVER */
+
+        .volver-productos {
+            display: inline-block;
+            color: var(--azul);
+            text-decoration: none;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .volver-productos:hover {
+            color: var(--dorado);
+        }
+
+        /* PIE DE PÁGINA */
+
+        .footer-delux {
+            background-color: var(--azul);
+            color: white;
+            text-align: center;
+            border-top: 5px solid var(--dorado);
+            padding: 50px 20px 30px;
+        }
+
+        .footer-delux h2 {
+            color: var(--dorado);
+            font-size: 32px;
+            letter-spacing: 5px;
+        }
+
+        .footer-delux p {
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+
+            .nav-link {
+                margin-left: 0;
+                padding: 12px 0;
+            }
+
+            .carrito-enlace {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+        }
+
+        @media (max-width: 576px) {
+
+            .logo {
+                width: 125px;
+            }
+
+            .encabezado h1 {
+                font-size: 30px;
+            }
+
+            .seccion-especificaciones {
+                padding: 40px 0;
+            }
+
+            .panel-producto {
+                padding: 20px;
+            }
+
+            .imagen-producto {
+                height: 300px;
+            }
+
+            .nombre-producto {
+                font-size: 29px;
+            }
+
+            .precio {
+                font-size: 24px;
+            }
+
+            .botones-compra .btn-delux {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="barra-superior">
+        JOYERÍA DELUX · ELEGANCIA Y ESTILO
+    </div>
+
+    <!-- MENÚ -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html">
+
+                    <img
+                        src="img/logo-delux.png"
+                        alt="Logotipo de Joyería Delux"
+                        class="logo"
+                    >
+
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal"
+                >
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos.html">
+                                Productos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">
+                                Contacto
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a
+                                class="carrito-enlace"
+                                href="carrito.html"
+                                aria-label="Ver carrito"
+                            >
+
+                                <i
+                                    class="bi bi-cart3"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <span
+                                    class="carrito-contador"
+                                    id="contadorCarrito"
+                                >
+                                    0
+                                </span>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado">
+
+            <div class="container">
+
+                <h1>Especificaciones del producto</h1>
+
+                <div class="linea-dorada"></div>
+
+                <p>
+                    Conoce los detalles de nuestra joyería.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMACIÓN DEL PRODUCTO -->
+        <section class="seccion-especificaciones">
+
+            <div class="container">
+
+                <a
+                    href="productos.html"
+                    class="volver-productos"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                    Volver a productos
+                </a>
+
+                <div class="panel-producto">
+
+                    <div class="row g-5 align-items-start">
+
+                        <!-- IMAGEN -->
+                        <div class="col-lg-6">
+
+                            <img
+                                id="imagenProducto"
+                                class="imagen-producto"
+                                src=""
+                                alt="Fotografía del producto"
+                            >
+
+                        </div>
+
+                        <!-- INFORMACIÓN -->
+                        <div class="col-lg-6">
+
+                            <p
+                                class="categoria"
+                                id="categoriaProducto"
+                            ></p>
+
+                            <h2
+                                class="nombre-producto"
+                                id="nombreProducto"
+                            ></h2>
+
+                            <p
+                                class="precio"
+                                id="precioProducto"
+                            ></p>
+
+                            <p
+                                class="descripcion"
+                                id="descripcionProducto"
+                            ></p>
+
+                            <!-- CARACTERÍSTICAS -->
+                            <h3 class="titulo-detalles">
+                                Características
+                            </h3>
+
+                            <table class="tabla-detalles">
+
+                                <tbody>
+
+                                    <tr>
+                                        <th>Material</th>
+                                        <td id="materialProducto"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Color</th>
+                                        <td id="colorProducto"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Medidas</th>
+                                        <td id="medidasProducto"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Disponibilidad</th>
+                                        <td id="disponibilidadProducto"></td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                            <!-- CANTIDAD -->
+                            <div class="selector-cantidad">
+
+                                <label for="cantidadProducto">
+                                    Cantidad:
+                                </label>
+
+                                <div class="control-cantidad">
+
+                                    <button
+                                        type="button"
+                                        id="disminuirCantidad"
+                                        aria-label="Disminuir cantidad"
+                                    >
+                                        −
+                                    </button>
+
+                                    <input
+                                        type="number"
+                                        id="cantidadProducto"
+                                        value="1"
+                                        min="1"
+                                        max="99"
+                                        readonly
+                                    >
+
+                                    <button
+                                        type="button"
+                                        id="aumentarCantidad"
+                                        aria-label="Aumentar cantidad"
+                                    >
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <!-- BOTONES -->
+                            <div class="botones-compra">
+
+                                <button
+                                    type="button"
+                                    class="btn-delux"
+                                    id="agregarCarrito"
+                                >
+                                    <i class="bi bi-cart-plus"></i>
+                                    Agregar al carrito
+                                </button>
+
+                                <a
+                                    href="carrito.html"
+                                    class="btn-delux"
+                                >
+                                    <i class="bi bi-bag-check"></i>
+                                    Ver carrito
+                                </a>
+
+                            </div>
+
+                            <p
+                                class="mensaje-agregado"
+                                id="mensajeAgregado"
+                                role="status"
+                            >
+                                <i class="bi bi-check-circle"></i>
+                                Producto agregado correctamente.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer-delux">
+
+        <div class="container">
+
+            <h2>DELUX</h2>
+
+            <div class="linea-dorada"></div>
+
+            <p>
+                Acompañar al mundo con elegancia.
+            </p>
+
+            <p class="small mb-0">
+                Joyería Delux | Sitio web académico
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- JAVASCRIPT DE ESPECIFICACIONES -->
+    <script>
+
+        /* ================================= */
+        /* CATÁLOGO DE PRODUCTOS             */
+        /* ================================= */
+
+        const productos = [
+
+            {
+                id: "1",
+                nombre: "Collar dorado",
+                categoria: "Collares",
+                precio: 450,
+                imagen: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Collar de estilo elegante para complementar diferentes atuendos y ocasiones.",
+                material: "Por confirmar",
+                color: "Dorado",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "2",
+                nombre: "Collar elegante",
+                categoria: "Collares",
+                precio: 520,
+                imagen: src="img/collar elegante.jpg",
+                descripcion: "Accesorio de diseño elegante para ocasiones especiales.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "3",
+                nombre: "Pulsera clásica",
+                categoria: "Pulseras",
+                precio: 350,
+                imagen: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Pulsera de estilo clásico que puede combinarse con otros accesorios.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "4",
+                nombre: "Pulsera Delux",
+                categoria: "Pulseras",
+                precio: 390,
+                imagen: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Pulsera de nuestra colección Delux para complementar tu estilo.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "5",
+                nombre: "Esclava clásica",
+                categoria: "Esclavas",
+                precio: 480,
+                imagen: "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Esclava de diseño clásico para uso cotidiano o para ocasiones especiales.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "6",
+                nombre: "Esclava Delux",
+                categoria: "Esclavas",
+                precio: 550,
+                imagen: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Accesorio de la colección Delux con un diseño pensado para diferentes estilos.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "7",
+                nombre: "Aretes elegantes",
+                categoria: "Aretes",
+                precio: 280,
+                imagen: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Aretes para complementar tu estilo con un detalle elegante.",
+                material: "Por confirmar",
+                color: "Por confirmar",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            },
+
+            {
+                id: "8",
+                nombre: "Anillo dorado",
+                categoria: "Anillos",
+                precio: 420,
+                imagen: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+                descripcion: "Anillo de estilo elegante para complementar diferentes combinaciones de joyería.",
+                material: "Por confirmar",
+                color: "Dorado",
+                medidas: "Por confirmar",
+                disponibilidad: "Consultar disponibilidad"
+            }
+
+        ];
+
+
+        /* ================================= */
+        /* IDENTIFICAR PRODUCTO              */
+        /* ================================= */
+
+        const parametros = new URLSearchParams(
+            window.location.search
+        );
+
+        const idProducto = parametros.get("id");
+
+        const productoActual = productos.find(
+            function(producto) {
+                return producto.id === idProducto;
+            }
+        );
+
+
+        /* ================================= */
+        /* FORMATO DE PRECIO                 */
+        /* ================================= */
+
+        function formatoPrecio(precio) {
+
+            return new Intl.NumberFormat("es-MX", {
+                style: "currency",
+                currency: "MXN"
+            }).format(precio);
+
+        }
+
+
+        /* ================================= */
+        /* MOSTRAR ESPECIFICACIONES          */
+        /* ================================= */
+
+        if (productoActual) {
+
+            document.getElementById(
+                "imagenProducto"
+            ).src = productoActual.imagen;
+
+            document.getElementById(
+                "imagenProducto"
+            ).alt = productoActual.nombre;
+
+            document.getElementById(
+                "categoriaProducto"
+            ).textContent = productoActual.categoria;
+
+            document.getElementById(
+                "nombreProducto"
+            ).textContent = productoActual.nombre;
+
+            document.getElementById(
+                "precioProducto"
+            ).textContent = formatoPrecio(productoActual.precio);
+
+            document.getElementById(
+                "descripcionProducto"
+            ).textContent = productoActual.descripcion;
+
+            document.getElementById(
+                "materialProducto"
+            ).textContent = productoActual.material;
+
+            document.getElementById(
+                "colorProducto"
+            ).textContent = productoActual.color;
+
+            document.getElementById(
+                "medidasProducto"
+            ).textContent = productoActual.medidas;
+
+            document.getElementById(
+                "disponibilidadProducto"
+            ).textContent = productoActual.disponibilidad;
+
+            document.title =
+                productoActual.nombre + " | Joyería Delux";
+
+        } else {
+
+            document.querySelector(
+                ".panel-producto"
+            ).innerHTML = `
+                <div class="text-center py-5">
+
+                    <h2>Producto no encontrado</h2>
+
+                    <p>
+                        Selecciona un artículo
+                        desde nuestro catálogo.
+                    </p>
+
+                    <a
+                        href="productos.html"
+                        class="btn-delux"
+                    >
+                        Volver a productos
+                    </a>
+
+                </div>
+            `;
+
+        }
+
+
+        /* ================================= */
+        /* CONTROL DE CANTIDAD               */
+        /* ================================= */
+
+        if (productoActual) {
+
+            const cantidadInput = document.getElementById(
+                "cantidadProducto"
+            );
+
+            document.getElementById(
+                "aumentarCantidad"
+            ).addEventListener("click", function() {
+
+                let cantidad = Number(cantidadInput.value);
+
+                if (cantidad < 99) {
+                    cantidadInput.value = cantidad + 1;
+                }
+
+            });
+
+            document.getElementById(
+                "disminuirCantidad"
+            ).addEventListener("click", function() {
+
+                let cantidad = Number(cantidadInput.value);
+
+                if (cantidad > 1) {
+                    cantidadInput.value = cantidad - 1;
+                }
+
+            });
+
+        }
+
+
+        /* ================================= */
+        /* CARRITO DE COMPRAS                */
+        /* ================================= */
+
+        function obtenerCarrito() {
+
+            try {
+
+                const datos = JSON.parse(
+                    localStorage.getItem("carritoDelux")
+                );
+
+                return Array.isArray(datos) ? datos : [];
+
+            } catch (error) {
+
+                return [];
+
+            }
+
+        }
+
+
+        function actualizarContador() {
+
+            const carrito = obtenerCarrito();
+
+            const cantidadTotal = carrito.reduce(
+                function(total, producto) {
+
+                    return total + Number(producto.cantidad);
+
+                },
+                0
+            );
+
+            document.getElementById(
+                "contadorCarrito"
+            ).textContent = cantidadTotal;
+
+        }
+
+
+        /* ================================= */
+        /* AGREGAR PRODUCTO AL CARRITO       */
+        /* ================================= */
+
+        if (productoActual) {
+
+            document.getElementById(
+                "agregarCarrito"
+            ).addEventListener("click", function() {
+
+                const cantidad = Number(
+                    document.getElementById(
+                        "cantidadProducto"
+                    ).value
+                );
+
+                const carrito = obtenerCarrito();
+
+                const existente = carrito.find(
+                    function(producto) {
+
+                        return producto.id === productoActual.id;
+
+                    }
+                );
+
+                if (existente) {
+
+                    existente.cantidad += cantidad;
+
+                } else {
+
+                    carrito.push({
+
+                        id: productoActual.id,
+                        nombre: productoActual.nombre,
+                        precio: productoActual.precio,
+                        cantidad: cantidad
+
+                    });
+
+                }
+
+                localStorage.setItem(
+                    "carritoDelux",
+                    JSON.stringify(carrito)
+                );
+
+                actualizarContador();
+
+                document.getElementById(
+                    "mensajeAgregado"
+                ).style.display = "block";
+
+            });
+
+        }
+
+
+        /* INICIAR CONTADOR */
+
+        actualizarContador();
+
+        window.addEventListener(
+            "pageshow",
+            actualizarContador
+        );
+
+    </script>
+
+</body>
+</html>
